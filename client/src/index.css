@@ -1,0 +1,129 @@
+/* Define common styles using CSS variables */
+:root {
+  --primary-color: #333;
+  --text-color: #fff;
+  --padding: 20px;
+  --grid-gap: 20px;
+  --min-column-width: 250px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.basket-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.basket-quantity {
+  font-weight: bold;
+}
+
+.home,
+.basket {
+  padding: var(--padding);
+}
+
+.product-list,
+.basket-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+  gap: var(--grid-gap);
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .navbar-title {
+    font-size: 20px;
+  }
+
+  .navbar-link {
+    margin-right: 10px;
+  }
+
+  .basket-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+  }
+}
+
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Custom button for add to basket */
+.addtobasket {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Custom button for remove from basket */
+.removefrombasket {
+  background-color: #ccc; /* Light gray background */
+  color: #333; /* Dark gray text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for button hover effect */
+.addtobasket:hover,
+.removefrombasket:hover {
+  background-color: grey;
+}
